@@ -1,0 +1,647 @@
+:root {
+    --primary-pink: #ffc5d3;
+    --secondary-pink: #e94b64;
+    --dark-text: #640d14;
+    --light: #e9e9e9;
+    --light-pink: #ff9eb5;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 80px;
+}
+
+/* Header */
+.app-header {
+    background: linear-gradient(135deg, #FFC5D3 0%, #ff9592 30% ,#FFC5D3 0%, #E94B64 100%);
+    padding: 15px 20px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.header-time {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.header-icon-link {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-icon-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.header-icon-link:active {
+    transform: scale(0.95);
+}
+
+.current-address {
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.address-text {
+    color: var(--dark-text);
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 0.25rem;
+}
+
+.address-label {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Search Bar */
+.search-bar {
+    position: relative;
+    margin-top: 5px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    background: #fff;
+    color: #333;
+    outline: none;
+}
+
+.search-bar input::placeholder {
+    color: #999;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 16px;
+}
+
+/* Restaurant Info */
+.restaurant-info {
+    background: #fff;
+    padding: 20px;
+    width: 100%;
+}
+
+.restaurant-name {
+    font-size: 24px;
+    font-weight: 800;
+    color: #640D14;
+    margin-bottom: 4px;
+}
+
+.restaurant-type {
+    font-size: 14px;
+    color: #640D14;
+    margin-bottom: 8px;
+}
+
+.restaurant-location-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.restaurant-location {
+    font-size: 14px;
+    color: #640D14;
+    font-weight: 600;
+}
+
+.see-on-maps {
+    font-size: 13px;
+    color: #c0392b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.see-on-maps:hover {
+    text-decoration: underline;
+}
+
+.map-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #e8e8e8;
+    position: relative;
+}
+
+.map-image iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.description-text {
+    font-size: 14px;
+    color: #640D14;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Category Tabs */
+.category-tabs-container {
+    background: #fff;
+    padding: 15px 0;
+    position: sticky;
+    top: 130px;
+    z-index: 90;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+
+.category-tabs {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 20px;
+}
+
+.category-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.category-tab {
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #640D14;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    background: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.category-tab.active {
+    color: #640D14;
+}
+
+.category-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: #640D14;
+    border-radius: 2px;
+}
+
+.category-tab:hover {
+    color: #8b2020;
+}
+
+/* Product Sections */
+.product-section {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #640D14;
+    margin-bottom: 15px;
+}
+
+/* Grid Layout (Kerupuk) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.product-card-grid {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.product-card-grid .product-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    background: #f0f0f0;
+}
+
+.product-card-grid .product-info {
+    padding: 12px;
+}
+
+.product-card-grid .product-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #640D14;
+    margin-bottom: 4px;
+}
+
+.product-card-grid .product-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: #640D14;
+    margin-bottom: 10px;
+}
+
+/* List Layout (Frozen Food, Topping, Sayur) */
+.product-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.product-list-item:last-child {
+    border-bottom: none;
+}
+
+.product-list-info {
+    flex: 1;
+    padding-right: 15px;
+}
+
+.product-list-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #640D14;
+    margin-bottom: 6px;
+}
+
+.product-list-desc {
+    font-size: 13px;
+    color: #640D14;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.product-list-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #640D14;
+    margin-bottom: 10px;
+}
+
+.product-list-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #f0f0f0;
+}
+
+/* Add Button */
+.btn-add {
+    padding: 8px 30px;
+    border: 1.5px solid #640D14;
+    border-radius: 25px;
+    background: #fff;
+    color: #640D14;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-add:hover {
+    background: #640D14;
+    color: #fff;
+}
+
+.btn-add:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: #ccc;
+    color: #ccc;
+}
+
+.btn-add:disabled:hover {
+    background: #fff;
+    color: #ccc;
+}
+
+/* Quantity Counter */
+.qty-counter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px solid #640D14;
+    background: #fff;
+    color: #640D14;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.qty-btn:hover {
+    background: #640D14;
+    color: #fff;
+}
+
+.qty-btn.minus {
+    font-size: 16px;
+}
+
+.qty-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #640D14;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Heart Icon */
+.heart-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #ccc;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.heart-btn:hover,
+.heart-btn.active {
+    color: #e74c3c;
+}
+
+/* Sold Out Label */
+.sold-out-label {
+    font-size: 12px;
+    color: #c0392b;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+/* ===== CART BAR ===== */
+.cart-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 440px;
+    background: #fcd5e0;
+    border-radius: 16px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(20px);
+}
+
+.cart-bar.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.cart-bar:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cart-bar-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-count {
+    font-size: 18px;
+    font-weight: 800;
+    color: #640D14;
+}
+
+.cart-total-price {
+    font-size: 18px;
+    font-weight: 800;
+    color: #640D14;
+}
+
+.cart-bar-right {
+    width: 40px;
+    height: 40px;
+    background: #640D14;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cart-bar-right i {
+    color: #fff;
+    font-size: 20px;
+}
+
+/* ===== RESPONSIVE - MOBILE (DIPERTAHANKAN) ===== */
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product-card-grid .product-image {
+        height: 100px;
+    }
+
+    .product-list-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .restaurant-name {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .cart-bar {
+        width: calc(100% - 30px);
+        bottom: 15px;
+    }
+}
+
+/* ===== RESPONSIVE - TABLET ===== */
+@media (min-width: 577px) and (max-width: 767px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .product-list-image {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+/* ===== RESPONSIVE - DESKTOP (FULL PAGE) ===== */
+@media (min-width: 768px) {
+    /* HAPUS max-width dan box-shadow agar full page */
+    body {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    /* Grid lebih banyak kolom di desktop */
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .product-card-grid .product-image {
+        height: 150px;
+    }
+
+    .product-card-grid .product-name {
+        font-size: 15px;
+    }
+
+    .product-card-grid .product-price {
+        font-size: 14px;
+    }
+
+    .product-list-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .product-list-name {
+        font-size: 17px;
+    }
+
+    .product-list-desc {
+        font-size: 14px;
+    }
+
+    .restaurant-name {
+        font-size: 28px;
+    }
+
+    .restaurant-type {
+        font-size: 15px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    /* Cart bar lebih lebar di desktop */
+    .cart-bar {
+        max-width: 600px;
+        bottom: 30px;
+    }
+
+    .cart-item-count,
+    .cart-total-price {
+        font-size: 20px;
+    }
+
+    .cart-bar-right {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ===== RESPONSIVE - LARGE DESKTOP ===== */
+@media (min-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+
+    .product-card-grid .product-image {
+        height: 180px;
+    }
+
+    .product-list-image {
+        width: 110px;
+        height: 110px;
+    }
+
+    .cart-bar {
+        max-width: 700px;
+    }
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,380 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .home-btn {
+            background-color: #ffd1dc;
+            color: #5a1a1a;
+            padding: 10px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .home-btn:hover {
+            background-color: #ffb6c1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #5a1a1a;
+            text-align: center;
+            flex: 1;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .month-section {
+            margin-bottom: 10px;
+            background: #fafafa;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .month-header {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffd1dc;
+        }
+
+        .month-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #5a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .order-count {
+            font-size: 14px;
+            color: #5a1a1a;
+            opacity: 0.8;
+        }
+
+        .orders-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .order-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .order-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-color: #ffd1dc;
+        }
+
+        .order-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .item-count {
+            font-size: 24px;
+            font-weight: 700;
+            color: #5a1a1a;
+        }
+
+        .order-date {
+            font-size: 14px;
+            color: #5a1a1a;
+            opacity: 0.9;
+        }
+
+        .arrow {
+            color: #5a1a1a;
+            font-size: 24px;
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        .order-card:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        .home-indicator {
+            width: 134px;
+            height: 5px;
+            background-color: #1a1a1a;
+            border-radius: 3px;
+            margin: 30px auto 0;
+        }
+
+        /* Tablet Styles */
+        @media (min-width: 768px) {
+            .container {
+                padding: 30px 40px;
+                margin: 30px auto;
+                border-radius: 24px;
+            }
+
+            .title {
+                font-size: 36px;
+            }
+
+            .month-name {
+                font-size: 28px;
+            }
+
+            .month-section {
+                padding: 30px;
+                border-radius: 20px;
+            }
+
+            .orders-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .order-card {
+                padding: 25px;
+                border-radius: 20px;
+            }
+
+            .item-count {
+                font-size: 26px;
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 1024px) {
+            .container {
+                padding: 40px 60px;
+                min-height: calc(100vh - 40px);
+                margin: 20px auto;
+                border-radius: 28px;
+                box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+            }
+
+            body {
+                background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            }
+
+            .header {
+                margin-bottom: 40px;
+            }
+
+            .title {
+                font-size: 40px;
+            }
+
+            .home-btn {
+                padding: 12px 30px;
+                font-size: 18px;
+                border-radius: 14px;
+            }
+
+            .month-section {
+                background: white;
+                padding: 35px;
+                border-radius: 24px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+                border: 1px solid #f5f5f5;
+            }
+
+            .month-header {
+                border-bottom: 3px solid #ffd1dc;
+                padding-bottom: 15px;
+                margin-bottom: 25px;
+            }
+
+            .month-name {
+                font-size: 32px;
+            }
+
+            .orders-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .order-card {
+                padding: 30px;
+                border-width: 2px;
+                border-radius: 20px;
+            }
+
+            .order-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            }
+
+            .item-count {
+                font-size: 28px;
+            }
+
+            .order-date {
+                font-size: 16px;
+            }
+
+            .arrow {
+                font-size: 28px;
+            }
+
+            .home-indicator {
+                display: none;
+            }
+        }
+
+        /* Large Desktop */
+        @media (min-width: 1440px) {
+            .orders-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .container {
+                max-width: 1400px;
+                border-radius: 32px;
+            }
+
+            .month-section {
+                border-radius: 28px;
+            }
+
+            .order-card {
+                border-radius: 24px;
+            }
+        }
+
+        /* Mobile Specific */
+        @media (max-width: 767px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+                border-radius: 16px;
+                min-height: calc(100vh - 20px);
+            }
+
+            .title {
+                font-size: 24px;
+            }
+
+            .home-btn {
+                padding: 8px 18px;
+                font-size: 14px;
+                border-radius: 10px;
+            }
+
+            .month-section {
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+            .month-name {
+                font-size: 20px;
+            }
+
+            .item-count {
+                font-size: 20px;
+            }
+
+            .order-card {
+                padding: 15px;
+                border-radius: 14px;
+            }
+
+            .status-bar {
+                font-size: 12px;
+                padding: 8px 15px;
+            }
+        }
+
+        /* Status bar for mobile view */
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            background-color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .status-icons {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .status-bar {
+                display: none;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for cards */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .order-card {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .order-card:nth-child(1) { animation-delay: 0.1s; }
+        .order-card:nth-child(2) { animation-delay: 0.2s; }
+        .order-card:nth-child(3) { animation-delay: 0.3s; }
+        .order-card:nth-child(4) { animation-delay: 0.4s; }

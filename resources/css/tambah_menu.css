@@ -1,0 +1,319 @@
+:root {
+    --primary-color: #640d14;
+    --primary-light: #7d2c3b;
+    --save-color: #ffc5d3;
+    --save-hover: #ff9eb5;
+    --dropdown-bg: #e94b64;
+    --dropdown-hover: #e39696;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-custom {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand,
+.nav-link {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+.form-label {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 12px 16px;
+}
+
+.form-control:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.2rem rgba(128, 0, 0, 0.15);
+}
+
+.form-control::placeholder {
+    color: #999;
+}
+
+/* Custom Dropdown Styling */
+.custom-select-wrapper {
+    position: relative;
+    user-select: none;
+}
+
+.custom-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-select__trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    height: 50px;
+    line-height: 50px;
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.custom-select__trigger::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--primary-color);
+    transition: transform 0.3s;
+}
+
+.custom-select.open .custom-select__trigger::after {
+    transform: rotate(180deg);
+}
+
+.custom-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    margin-top: 4px;
+    background-color: var(--save-color);
+    transition: all 0.4s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(128, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.custom-select.open .custom-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.custom-option {
+    position: relative;
+    display: block;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--primary-color);
+    line-height: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: 4px;
+    border-radius: 8px;
+}
+
+.custom-option:hover {
+    background-color: var(--dropdown-hover);
+    transform: translateX(4px);
+}
+
+.custom-option.selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.custom-option::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 1px;
+    background: rgba(128, 0, 0, 0.1);
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50%;
+    margin-right: -50%;
+    width: calc(100% - 8px);
+}
+
+.custom-option:last-child::before {
+    display: none;
+}
+
+.custom-select input {
+    display: none;
+}
+
+.btn-upload {
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.btn-upload:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.form-check-input {
+    border: 2px solid var(--primary-color);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-label {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.btn-simpan {
+    background-color: var(--save-color);
+    border: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.btn-simpan:hover {
+    background-color: var(--save-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-batal {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.btn-batal:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-group {
+    margin-top: 1.5rem;
+}
+
+.card-custom {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.form-section {
+    margin-bottom: 1.5rem;
+}
+
+/* ===== BUTTON GROUP - SELALU BERDAMPINGAN (Simpan kiri, Batal kanan) ===== */
+.button-group .row {
+    flex-direction: row !important;
+    gap: 10px;
+}
+
+.button-group .col-6 {
+    flex: 1 1 0;
+    max-width: 50%;
+}
+
+.button-group .btn {
+    width: 100%;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .card-custom {
+        padding: 16px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .button-group .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .btn-simpan,
+    .btn-batal {
+        padding: 12px 0.75rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 769px) {
+    .container-form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .button-group .row {
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .button-group .btn {
+        min-width: 140px;
+    }
+}
+
+.heart-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.heart-icon:hover {
+    transform: scale(1.1);
+}

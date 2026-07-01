@@ -1,0 +1,629 @@
+:root {
+    --primary-pink: #ffc5d3;
+    --secondary-pink: #e94b64;
+    --dark-text: #640d14;
+    --light: #e9e9e9;
+    --light-pink: #ff9eb5;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: "Roboto";
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+/* ===== HEADER ===== */
+.header-gradient {
+    background: linear-gradient(
+        180deg,
+        var(--primary-pink) 0%,
+        var(--secondary-pink) 100%
+    );
+    padding: 1rem 0;
+    color: var(--dark-text);
+}
+
+.address-text {
+    color: var(--dark-text);
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 0.25rem;
+}
+
+.address-label {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.current-address {
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-box {
+    background: white;
+    border-radius: 25px;
+    padding: 0.75rem 1.25rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.search-box:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.search-box:focus-within {
+    box-shadow: 0 4px 20px rgba(233, 75, 100, 0.2);
+    border-color: var(--secondary-pink);
+}
+
+.search-box .d-flex {
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.search-box i.bi-search {
+    color: #adb5bd;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.search-box:focus-within i.bi-search {
+    color: var(--secondary-pink);
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+    font-size: 0.95rem;
+    color: var(--dark-text);
+    padding: 0;
+    margin: 0;
+}
+
+.search-box input::placeholder {
+    color: #adb5bd;
+    font-weight: 400;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.header-actions .btn {
+    color: var(--dark-text);
+    padding: 0.4rem 0.6rem;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-actions .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.header-actions .bi-clipboard-check {
+    color: var(--dark-text);
+}
+
+/* ===== RESTAURANT INFO ===== */
+.restaurant-header {
+    background: white;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.restaurant-name {
+    color: var(--dark-text);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.see-maps {
+    color: var(--secondary-pink);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.see-maps:hover {
+    color: var(--dark-text);
+}
+
+/* ===== MAP ===== */
+.map-wrapper {
+    padding: 1rem 0;
+    background: #f8f9fa;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 30%;
+    height: 0;
+    overflow: hidden;
+    background: #e9ecef;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ===== INFO BANNER ===== */
+.info-banner {
+    background: var(--light);
+    padding: 15px;
+    color: var(--dark-text);
+    border-left: 4px solid #f8a4b8;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-banner-wrapper {
+    padding: 0 0 1rem 0;
+    background: #f8f9fa;
+}
+
+.info-banner p {
+    color: var(--dark-text);
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ===== MAIN TABS ===== */
+.main-tabs {
+    padding: 1rem 0;
+    background: white;
+}
+
+.tab-primary {
+    background: var(--primary-pink);
+    color: var(--dark-text);
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+.tab-primary:hover {
+    background: var(--light-pink);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(233, 75, 100, 0.3);
+}
+
+.tab-secondary {
+    background: var(--primary-pink);
+    color: var(--dark-text);
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* ===== CATEGORY TABS ===== */
+.category-tabs {
+    background: white;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.category-tab {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--dark-text);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 0;
+}
+
+.category-tab.active {
+    background: transparent;
+    color: var(--dark-text);
+    border-bottom: 2px solid var(--dark-text);
+    font-weight: 700;
+}
+
+.category-tab:hover {
+    color: var(--dark-text);
+    border-bottom-color: var(--dark-text);
+    /* Garis bawah saat hover */
+}
+
+/* ===== MENU SECTION ===== */
+.menu-section {
+    padding: 1.5rem 0;
+}
+
+.section-title {
+    color: var(--dark-text);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    scroll-margin-top: 80px;
+}
+
+.add-menu-btn {
+    background: transparent;
+    border: none;
+    color: var(--secondary-pink);
+    font-weight: 600;
+    padding: 0;
+}
+
+/* ===== MENU GRID (KERUPUK) ===== */
+/* Mobile: 2 kolom */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+/* Desktop: 4 kolom */
+@media (min-width: 992px) {
+    .menu-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.menu-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.menu-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.menu-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.menu-title {
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.4em;
+}
+
+.menu-desc {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    flex-grow: 1;
+    /* Batasi deskripsi agar tidak terlalu panjang */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.menu-price {
+    font-weight: 700;
+    color: var(--secondary-pink);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.menu-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+.btn-edit {
+    background: white;
+    border: 1px solid var(--dark-text);
+    color: var(--dark-text);
+    border-radius: 20px;
+    padding: 0.25rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.btn-edit:hover {
+    background: var(--dark-text);
+    color: white;
+}
+
+.btn-delete {
+    background: transparent;
+    border: none;
+    color: var(--dark-text);
+    font-size: 1.1rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.btn-danger {
+    background-color: var(--primary-pink);
+    color: var(--dark-text);
+    border-color: var(--primary-pink);
+}
+
+.btn-light {
+    background-color: var(--dark-text);
+    color: var(--primary-pink);
+    border-color: var(--dark-text);
+}
+
+/* ===== HORIZONTAL MENU (Sayur, Topping, Frozen Food) ===== */
+.horizontal-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.horizontal-item {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    align-items: stretch;
+}
+
+/* Konten di kiri, gambar di kanan */
+.horizontal-item-content {
+    flex: 1;
+    min-width: 0;
+    order: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal-item-content .menu-desc {
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.horizontal-item-content .menu-price {
+    margin-top: auto;
+    /* Dorong harga ke bawah sebelum tombol */
+    margin-bottom: 0.5rem;
+}
+
+.horizontal-item-content .menu-actions {
+    margin-top: 0.5rem;
+}
+
+.horizontal-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    order: 2;
+    flex-shrink: 0;
+}
+
+/* ===== MENU UNAVAILABLE (TIDAK TERSEDIA) ===== */
+.menu-unavailable {
+    position: relative;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.menu-unavailable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-unavailable .menu-image,
+.menu-unavailable .menu-price,
+.menu-unavailable.horizontal-item img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+/* Watermark "Tidak Tersedia" */
+.menu-unavailable::before {
+    content: "TIDAK TERSEDIA";
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    background-color: rgba(100, 13, 20, 0.9);
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    z-index: 5;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+/* Untuk horizontal menu */
+.horizontal-item.menu-unavailable::before {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    top: 50%;
+}
+
+/* Disable tombol pada menu tidak tersedia */
+.menu-unavailable .btn-edit,
+.menu-unavailable .btn-delete {
+    pointer-events: auto;
+    opacity: 1;
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+}
+
+.menu-unavailable .btn-edit:hover {
+    background: var(--dark-text);
+    color: white;
+    transform: scale(1.05);
+}
+
+.menu-unavailable .btn-delete:hover {
+    color: var(--secondary-pink);
+    transform: scale(1.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 576px) {
+    .horizontal-item {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .horizontal-item img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .horizontal-item-content {
+        width: 100%;
+    }
+
+    .map-container {
+        padding-bottom: 60%;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Adjust font size for small screens */
+    .menu-title {
+        font-size: 0.9rem;
+    }
+
+    .menu-desc {
+        font-size: 0.8rem;
+    }
+
+    .menu-price {
+        font-size: 0.95rem;
+    }
+
+    .search-box {
+        padding: 0.65rem 1rem;
+        margin-top: 0.75rem;
+    }
+
+    .search-box input {
+        font-size: 0.9rem;
+    }
+
+    .search-box i.bi-search {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .horizontal-item img {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (min-width: 992px) {
+    .menu-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .horizontal-item img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .map-container {
+        padding-bottom: 25%;
+    }
+}
+
+/* ===== ANIMATION ===== */
+.spin {
+    animation: spin 1s linear infinite;
+}

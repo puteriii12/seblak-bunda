@@ -1,0 +1,255 @@
+/* --- CSS Dasar (tidak diubah) --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.login-card {
+    max-width: 600px;
+    min-height: 300vh;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.header-bg {
+    background: linear-gradient(180deg, #ffc5d3 0%, #e94b64 100%);
+    padding: 60px 20px 40px;
+    text-align: center;
+    border-bottom-left-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+    margin-bottom: 40px;
+}
+
+.logo-placeholder {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: linear-gradient(180deg, #ffc5d3 0%, #e94b64 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid linear-gradient(180deg, #ffc5d3 0%, #e94b64 100%);
+    overflow: hidden;
+    /* Penting: mencegah gambar keluar dari lingkaran */
+}
+
+/* PERBAIKAN: Logo agar responsif dan tidak keluar dari container */
+.logo-placeholder img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 500px;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.custom-input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.custom-input-group label {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background-color: #fff;
+    padding: 0 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #640d14;
+    z-index: 10;
+}
+
+.custom-input-group .input-group-text {
+    background-color: transparent;
+    border: none;
+    padding-left: 15px;
+    padding-right: 5px;
+}
+
+.custom-input-group .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.custom-input-group .input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-input-group .input-icon svg {
+    fill: #640d14;
+    width: 20px;
+    height: 20px;
+}
+
+.custom-input-group .input-group-text svg {
+    fill: #640d14;
+}
+
+.custom-input-group .form-control {
+    border-radius: 30px;
+    padding: 14px 55px 14px 55px;
+    border: 1px solid #640d14;
+    font-size: 0.95rem;
+    width: 100%;
+    height: 50px;
+    /* ✅ Tinggi minimum konsisten */
+    line-height: 1.5;
+}
+
+.custom-input-group .form-control:focus {
+    border-color: #e94b64;
+    box-shadow: 0 0 0 0.25rem rgba(100, 13, 20, 0.25);
+}
+
+.custom-input-group .form-control::placeholder {
+    color: #640d14;
+}
+
+.custom-input-group .btn-toggle-password {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    padding: 5px;
+    z-index: 5;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-input-group .btn-toggle-password svg {
+    fill: #640d14;
+    width: 20px;
+    height: 20px;
+    transition: fill 0.3s ease;
+}
+
+.custom-input-group .btn-toggle-password:hover svg {
+    fill: #6c757d;
+}
+
+.btn-login {
+    background-color: #ffc5d3;
+    color: #333;
+    border: none;
+    border-radius: 30px;
+    padding: 14px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 50px;
+    margin-top: 70px;
+}
+
+.btn-login:hover {
+    background-color: #e94b64;
+    transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* RESPONSIVE BREAKPOINTS                    */
+/* ========================================= */
+
+/* 📱 Mobile Kecil (max-width: 575px) */
+@media (max-width: 575.98px) {
+    .login-card {
+        max-width: 100%;
+        min-height: 100vh;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .header-bg {
+        padding: 40px 15px 30px;
+        margin-bottom: 30px;
+        border-bottom-left-radius: 500px;
+        border-bottom-right-radius: 500px;
+    }
+
+    .logo-placeholder {
+        width: 110px;
+        height: 110px;
+    }
+
+    .custom-input-group .form-control {
+        padding: 12px 45px;
+        font-size: 0.9rem;
+    }
+
+    .btn-login {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+/* 📱 Tablet (576px - 991px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 30px 15px;
+    }
+
+    .login-card {
+        max-width: 420px;
+        min-height: auto;
+        border-radius: 20px;
+        margin: 30px auto;
+    }
+}
+
+/* 💻 Desktop (992px ke atas) */
+@media (min-width: 992px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+
+    .login-card {
+        max-width: 480px;
+        min-height: auto;
+        border-radius: 25px;
+        margin: 0 auto;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .header-bg {
+        padding: 70px 30px 50px;
+        margin-bottom: 45px;
+    }
+
+    .logo-placeholder {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+/* 🖥️ Desktop Besar (1200px ke atas) */
+@media (min-width: 1200px) {
+    .login-card {
+        max-width: 500px;
+    }
+}
