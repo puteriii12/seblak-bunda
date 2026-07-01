@@ -80,6 +80,7 @@
                             Pilih File Baru
                         </label>
                         <input type="file" class="d-none" id="uploadGambar" name="image" accept=".jpg,.jpeg,.png">
+                        <small id="fileName" class="text-muted d-block mt-1">
                     </div>
                 </div>
                 <!-- Error message untuk format file -->
@@ -309,4 +310,4 @@
         e.target.value = value;
     });
 </script>
-@endscript
+@endpush

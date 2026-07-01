@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function index()
     {
         $categoryOrder = ['kerupuk', 'frozen_food', 'additional_topping', 'sayur'];
-        
+
         // ✅ PERBAIKAN: Ambil SEMUA menu (termasuk yang tidak tersedia)
         // agar bisa ditampilkan dengan watermark "Tidak Tersedia"
         $menus = Menu::orderBy('category')
@@ -40,7 +40,7 @@ class DashboardController extends Controller
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
             'ketersediaan' => 'required|in:tersedia,tidak_tersedia',
-            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            'image' => 'nullable|file|max:2048',
         ], [
             'image.mimes' => 'Format image harus JPG, JPEG, atau PNG',
             'image.max' => 'Ukuran image maksimal 2MB',
@@ -48,6 +48,15 @@ class DashboardController extends Controller
             'name.required' => 'Nama menu harus diisi',
             'price.required' => 'Harga harus diisi',
         ]);
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = strtolower($file->getClientOriginalExtension());
+
+            if (!in_array($extension, ['jpg', 'jpeg', 'png'])) {
+                return back()->withErrors(['image' => 'Format image harus JPG, JPEG, atau PNG'])->withInput();
+            }
+        }
 
         $imagePath = null;
         if ($request->hasFile('image')) {
@@ -85,11 +94,19 @@ class DashboardController extends Controller
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
             'ketersediaan' => 'required|in:tersedia,tidak_tersedia',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'image' => 'nullable|file|max:2048',
         ], [
-            'image.mimes' => 'Format image harus JPG, JPEG, atau PNG',
             'image.max' => 'Ukuran image maksimal 2MB',
         ]);
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = strtolower($file->getClientOriginalExtension());
+            
+            if (!in_array($extension, ['jpg', 'jpeg', 'png'])) {
+                return back()->withErrors(['image' => 'Format image harus JPG, JPEG, atau PNG'])->withInput();
+            }
+        }
 
         // Upload gambar baru jika ada
         if ($request->hasFile('image')) {

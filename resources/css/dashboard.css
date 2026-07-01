@@ -226,8 +226,8 @@ body {
 }
 
 .tab-primary:hover {
-    background: var(--light-pink);
-    color: white;
+    background: var(--dark-text);
+    color: var(--primary-pink);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(233, 75, 100, 0.3);
 }
