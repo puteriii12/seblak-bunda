@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: seblak-bunda
+    env: php
+    plan: free
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+      npm install && npm run build
+    startCommand: apache2-foreground
